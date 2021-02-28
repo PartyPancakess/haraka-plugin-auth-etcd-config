@@ -1,5 +1,5 @@
 {
-  "name": "haraka-plugin-template",
+  "name": "haraka-plugin-auth-etcd-config",
   "version": "1.0.1",
   "description": "Haraka plugin that frobnicates email connections",
   "main": "index.js",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haraka/haraka-plugin-template.git"
+    "url": "git+https://github.com/haraka/haraka-plugin-auth-etcd-config.git"
   },
   "keywords": [
     "haraka",
     "plugin",
-    "template"
+    "auth-etcd-config"
   ],
   "author": "Welcome Member <happy-haraka-hacker@example.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haraka/haraka-plugin-template/issues"
+    "url": "https://github.com/haraka/haraka-plugin-auth-etcd-config/issues"
   },
-  "homepage": "https://github.com/haraka/haraka-plugin-template#readme",
+  "homepage": "https://github.com/haraka/haraka-plugin-auth-etcd-config#readme",
   "devDependencies": {
     "eslint": "*",
     "eslint-plugin-haraka": "*",
