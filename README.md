@@ -14,21 +14,21 @@ The users defined under a domain is only allowed to send mails from that domain.
 
 For every user:
 
-\<username> = \<sha256 digest of password1> \<CRLF>
+\<username> \<space> \<sha256 digest of password1> \<CRLF>
 
 ```
-etcdctl put config/mta/domains/domain.com "user=PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
-user2=PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+etcdctl put config/mta/domains/domain.com "user PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+user2 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
 "
 ```
 In the above example, user and user2 have the passwords "pass" (converted) and are under the domain "domain.com." These 2 users will only be able to send mails from domain.com.
 Such as:
 ```
-swaks -s localhost:587 -f sender@domain.com -t goto@gmail.com -au test -ap pass --tls
+swaks -s localhost:587 -f sender@domain.com -t goto@gmail.com -au user -ap pass --tls
 ```
 Above command will work, while the below one will not:
 ```
-swaks -s localhost:587 -f sender@test.com -t goto@gmail.com -au test -ap pass --tls
+swaks -s localhost:587 -f sender@test.com -t goto@gmail.com -au user -ap pass --tls
 ```
 
 
@@ -42,7 +42,7 @@ node ./generate.js username1 pass
 
 Returns:
 
-username1=PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+username1 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
 ```
 
 

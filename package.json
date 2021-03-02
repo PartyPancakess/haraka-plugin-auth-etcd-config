@@ -1,6 +1,6 @@
 {
   "name": "haraka-plugin-auth-etcd-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Haraka plugin that checks authentication and domain for outgoing mails.",
   "main": "index.js",
   "scripts": {

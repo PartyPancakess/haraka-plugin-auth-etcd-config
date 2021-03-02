@@ -42,7 +42,7 @@ function load_users_config(domains) {
     
     users.forEach(function(user) {
       if (user) {
-        plugin.cfg.users[user.split("=")[0]] = user.split("=")[1];
+        plugin.cfg.users[user.split(" ")[0]] = user.split(" ")[1];
       }
     });
   }
@@ -99,7 +99,7 @@ exports.domain_check = function (next, connection, params) {
         
         users.forEach(function(user) {
           if(user) {
-            const saved_user = user.substr(0, user.indexOf('='));
+            const saved_user = user.substr(0, user.indexOf(' '));
             if (saved_user === connection.notes.get('auth.user'))
               included = true;
           }
