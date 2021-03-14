@@ -1,11 +1,11 @@
 {
   "name": "haraka-plugin-auth-etcd-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Haraka plugin that checks authentication and domain for outgoing mails.",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint *.js test/*.js",
-    "lintfix": "npx eslint --fix *.js test/*.js",
+    "lint": "",
+    "lintfix": "",
     "versions": "npx dependency-version-checker check",
     "test": "npx mocha"
   },

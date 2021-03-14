@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 if (process.argv.length < 4) {
-    console.log('Usage: gen.js [username] [password]')
+    console.log('Usage: generate.js [username] [password]')
     return
   }
   

@@ -7,7 +7,7 @@ It uses SHA256CRYPT for user passwords.
 
 
 ## Configuration
-Running etcd server must have key(s) in the config/mta/domains/\<domain> format.
+Running etcd server must have key(s) in the config/mta/domains/\<domain>/user format.
 The users defined under a domain is only allowed to send mails from that domain.
 
 ### Example etcd Configuration
@@ -17,7 +17,7 @@ For every user:
 \<username> \<space> \<sha256 digest of password1> \<CRLF>
 
 ```
-etcdctl put config/mta/domains/domain.com "user PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+etcdctl put config/mta/domains/domain.com/user "user PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
 user2 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
 "
 ```
@@ -49,11 +49,5 @@ username1 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
 
 
 <!-- leave these buried at the bottom of the document -->
-[ci-img]: https://github.com/PartyPancakess/haraka-plugin-auth-etcd-config/workflows/Plugin%20Tests/badge.svg
-[ci-url]: https://github.com/PartyPancakess/haraka-plugin-auth-etcd-config/actions?query=workflow%3A%22Plugin+Tests%22
-[ci-win-img]: https://github.com/PartyPancakess/haraka-plugin-auth-etcd-config/workflows/Plugin%20Tests%20-%20Windows/badge.svg
-[ci-win-url]: https://github.com/PartyPancakess/haraka-plugin-auth-etcd-config/actions?query=workflow%3A%22Plugin+Tests+-+Windows%22
-[clim-img]: https://codeclimate.com/github/PartyPancakess/haraka-plugin-auth-etcd-config/badges/gpa.svg
-[clim-url]: https://codeclimate.com/github/PartyPancakess/haraka-plugin-auth-etcd-config
 [npm-img]: https://nodei.co/npm/haraka-plugin-auth-etcd-config.png
 [npm-url]: https://www.npmjs.com/package/haraka-plugin-auth-etcd-config
