@@ -2,7 +2,7 @@
 // domain checks are done manually, later, by mail(mail_from) hook.
 
 
-const sha256crypt = require('../haraka-necessary-helper-plugins/sha256crypt');
+const sha256 = require('../haraka-necessary-helper-plugins/js-sha256');
 
 const { Etcd3 } = require('../haraka-necessary-helper-plugins/etcd3');
 const etcdClient = new Etcd3();
@@ -142,7 +142,7 @@ exports.check_plain_passwd = function (connection, user, passwd, cb) {
     console.log("Something is wrong with the 'Connection' property of Haraka. Check 'haraka-plugin-auth-etcd-config' plugin.");
 
   if (this.cfg.users[user]) {
-    return cb(sha256crypt.verify(passwd, this.cfg.users[user]));
+    return cb(this.cfg.users[user] === sha256(passwd));
   }
   return cb(false);
 }
