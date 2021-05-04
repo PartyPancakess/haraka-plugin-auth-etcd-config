@@ -3,7 +3,7 @@
 # haraka-plugin-auth-etcd-config
 
 This plugin is based on auth-enc-file (https://github.com/AuspeXeu/haraka-plugin-auth-enc-file).
-It uses SHA256CRYPT for user passwords.
+It uses SHA256 for user passwords.
 
 
 ## Configuration
@@ -17,8 +17,8 @@ For every user:
 \<username> \<space> \<sha256 digest of password1> \<CRLF>
 
 ```
-etcdctl put config/mta/domains/domain.com/user "user PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
-user2 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+etcdctl put config/mta/domains/domain.com/user "user d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+user2 d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
 "
 ```
 In the above example, user and user2 have the passwords "pass" (converted) and are under the domain "domain.com." These 2 users will only be able to send mails from domain.com.
@@ -42,7 +42,7 @@ node ./generate.js username1 pass
 
 Returns:
 
-username1 PtjxQL5GUfVgaUANlOrmXA4w7HPvxFfn2wfApOLWeZ2
+username1 d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
 ```
 
 
